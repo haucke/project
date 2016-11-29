@@ -57,10 +57,10 @@ def game_intro():
         gameDisplay.fill(white)
 
         message_to_screen("Welcome to Snakey!",green,-100,"large")
-        message_to_screen("The objective of the game is to catch and eat the mice",black,-30)
-        message_to_screen("The more mice you eat,the longer you willl get",black,10)
+        message_to_screen("The objective of the game is to catch and eat the mice!",black,-30)
+        message_to_screen("The more mice you eat, the longer you will get.",black,10)
         message_to_screen("If you run into yourself or the edges, you lose!",black,50)
-        message_to_screen("Press S to play, P to pause or Q to quit",black,180)
+        message_to_screen("Press C to play, P to pause, or Q to quit",black,180)
         pygame.display.update()
         clock.tick(15)
 
@@ -69,7 +69,7 @@ def pause():
     paused=True
 
     message_to_screen("Paused",black,-100,size="large")
-    message_to_screen("Press S to continue or Q to quit",black,25)
+    message_to_screen("Press C to continue or Q to quit",black,25)
 
     pygame.display.update()
 
@@ -79,9 +79,9 @@ def pause():
                 pygame.quit()
                 quit()
                 if event.type==pygame.KEYDOWN:
-                    if event.key==pygame.K_s:
+                    if event.key==pygame.K_c:
                         paused=False
-                        elif event.key==pygame.K_q:
+                    elif event.key==pygame.K_q:
                         pygame.quit()
                         quit()
 
@@ -152,7 +152,7 @@ def gameLoop():
     while running:
         if gameOver==True:
             message_to_screen("Game Over",red,-50,size="large")
-            message_to_screen("Press S to play again or Q to quit",black,50,size="medium")
+            message_to_screen("Press C to play again or Q to quit",black,50,size="medium")
             pygame.display.update()
 
     while gameOver == True:
@@ -165,7 +165,7 @@ def gameLoop():
                     if event.key==pygame.K_q:
                         running=False
                         gameOver=False
-                    if event.key==pygame.K_s:
+                    if event.key==pygame.K_c:
                         gameLoop()
 
             for event in pygame.event.get():
