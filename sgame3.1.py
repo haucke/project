@@ -67,7 +67,7 @@ def game_intro():
 
 def pause():
 
-    paused=True
+    paused = True
 
     message_to_screen("Paused",black,-100,size="large")
     message_to_screen("Press C to continue or Q to quit",black,25)
@@ -87,6 +87,7 @@ def pause():
                         quit()
 
                 clock.tick(5)
+
 
 def score(score):
 
